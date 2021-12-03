@@ -797,7 +797,6 @@ def avb2aaf_main(path):
     with avb.open(path) as avb_file:
         with aaf2.open(path + ".aaf", 'w') as aaf_file:
             register_definitions(aaf_file)
-            avb_file.content.build_mob_dict()
             avb2aaf(aaf_file, avb_file)
 
     # with aaf2.open(path + ".aaf", 'r') as aaf_file:

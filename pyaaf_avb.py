@@ -1,7 +1,8 @@
 import aaf2
+from aaf2.mobid import MobID
 
-# with aaf2.open("Aaf TestSeq.aaf", "r") as f:
-with aaf2.open("AAF TestBin1202.avb.aaf", "r") as f:
+with aaf2.open("Aaf TestSeq.aaf", "r") as f:
+# with aaf2.open("Youtube clips.avb.aaf", "r") as f:
     print('header = ', f.header)
     
     print('dictionary = ', f.dictionary)
@@ -37,3 +38,6 @@ with aaf2.open("AAF TestBin1202.avb.aaf", "r") as f:
             print('mob class id = {0}, mob_type = {1} '.format(mob.class_id, 'master'))
         elif str(mob.class_id) == '0d010101-0101-3700-060e-2b3402060101':
             print('mob class id = {0}, mob_type = {1} '.format(mob.class_id, 'source'))
+     
+    # mob_id = f.storage.composition_mobs()[0]    
+        print('mob umid = ', MobID(mob.mob_id))
