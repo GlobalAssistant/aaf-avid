@@ -1,6 +1,7 @@
 import aaf2
 
-with aaf2.open("Aaf TestSeq.aaf", "r") as f:
+# with aaf2.open("Aaf TestSeq.aaf", "r") as f:
+with aaf2.open("AAF TestBin1202.avb.aaf", "r") as f:
     print('header = ', f.header)
     
     print('dictionary = ', f.dictionary)
