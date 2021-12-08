@@ -772,7 +772,7 @@ def convert_composition(f, avb_mob):
         if avb_mob.usage_code == 0:
             aaf_mob.usage = "Usage_TopLevel"
 
-    # avb_dump(avb_mob)
+    avb_dump(avb_mob)
     aaf_mob.name = avb_mob.name or ""
 
     f.content.mobs.append(aaf_mob)
