@@ -1,0 +1,98 @@
+===================================== EdMon ==================================
+We have some more complicated c++ parts (exporting AAF from our app), perhaps you know someone that could work on that?
+Ok, have a look at this document ( I already sent you pdf )
+This is a simple description of the process:
+
+Using this open source project: https://github.com/dneg/aaf (or a later version)
+
+Manually generate in MC reference assets with corresponding MXF and AAF files
+Use a tool from the DNEG repo that dumps the metadata contents of the reference AAF into a human-readable form
+
+Alter DNEG's example code that generates an AAF to include the metadata structures found in MC's reference files.
+MC, means Media Composer from Avid
+You can also look at these projects:
+https://github.com/markreidvfx/pyaaf2
+This is a python project to create AAF-files.
+The file structure is similar to the mxf-files we are working with (in LogMon).
+You can find several projects here that relate to what we need to do.
+https://github.com/markreidvfx
+So this would be the process:
+1. Create a simple sequence in Media Composer.
+2. Export an AAF from that sequence from Media Composer.
+3. Look at the AAF and compare it to the sequence in the Avid bin to see what parts are needed (mxf-umids etc)
+4. Include those parts in our EdMon Paper Edit (for each clip) so that we can create an identical AAF from EdMon instead.
+
+=== Slack
+https://sunnysoftyworkspace.slack.com/archives/C02P4HW6M5L/p1638527272034900?thread_ts=1638526740.029300&cid=C02P4HW6M5L
+
+=== png
+1.png, 2.png, 3.png
+
+=== pdf
+
+=== Login
+Use username: davnor4
+With password: modab1234
+
+============================================ LogMon ====================================================
+It is a sequence with two edits in it, but both the edits come from the same clip.
+You are seeing many "mobs" because each channel has one mob, i.e one video mob and two audio mobs.
+and the PHYS mob, which is some sort of metadata-
+So, we should have 8 or more mobs in this aaf.
+A sequence is also a sort of a mob (a composition mob)
+The "regular" clips are master mobs
+Its complicated, because some sorts of clips are also composition mobs...
+But lets start with the master mobs and work forward.
+After you install logmon, you can open the bin that I sent you. I will send you some more avb.files as well.
+You don´t have any media for these, of course, since the media files are separate from the Avid .avb files.
+But you can look at the .avb files.
+The "Youtube clips" file contains three clips.
+And nothing else
+Try it in logmon.
+
+https://my.avid.com/get/media-composer-ultimate-trial
+c:/Avid MediaFiles/MXF/1
+The files I send youo must also be placed there. Then LogMon will be able to find them
+
+========= Workflow
+So, if I edit, for example, in Premiere Pro, I can export the sequence to an AAF
+Then I can import it in Media Composer, or any other video editor.
+It keeps the data about timecodes, duration of the edits etc.
+Yes, it is mostly data that references separate media files.
+In the order I edited them.
+So it is a fairly simple format.
+It will include the basic structure of an edit.
+But not effects and graphics, etc.
+So, the workflow will be.
+1. Import media in Media Composer.
+2.Use LogMon to transcribe the media in Media Composer.
+3.Edit the text in EdMon.
+4.make selections and add the parts you like to Paper Edit in Edmon.
+5.Export an AAF
+6.Import AAF in Media Composer
+
+============= AVID 
+SystemID 10538664597
+Activation ID: MUHA-WT7R-9LQE-LYSG
+
+If you need to login, you can use 
+    david.norden@gmail.com
+    Logmonlogmon12
+
+=== Ref URL
+https://www.lifewire.com/aaf-file-2619430
+
+https://github.com/dneg/aaf
+https://github.com/markreidvfx/pyaaf2
+https://pyaaf.readthedocs.io/en/latest/api/aaf2.mobid.html?highlight=umid#module-aaf2.mobid
+
+https://pyavb.readthedocs.io/en/latest/api/avb.attributes.html#attributes
+https://github.com/markreidvfx/pyavb/blob/master/examples/avb2aaf.py
+https://github.com/markreidvfx/pyavb/tree/master/examples
+
+
+https://programtalk.com/python-examples/aaf.open/?ipage=2
+https://python.hotexamples.com/examples/aaf/-/open/python-open-function-examples.html
+
+
+https://github.com/PixarAnimationStudios/OpenTimelineIO
